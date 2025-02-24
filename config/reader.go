@@ -142,6 +142,9 @@ func readValue(values map[string]interface{}, path string) (Value, bool) {
 		if !ok {
 			return nil, false
 		}
+		if value == nil {
+			return nil, false
+		}
 		if idx == last {
 			av := &atomicValue{}
 			av.Store(value)
